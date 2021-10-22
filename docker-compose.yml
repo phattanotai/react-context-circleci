@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+  user-frontend:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    container_name: user-frontend
+    restart: always
+    ports:
+      - "80:80"
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: docker_network
