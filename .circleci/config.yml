@@ -10,7 +10,7 @@ jobs:
     steps:
       - checkout
       - run: echo $USER@$HOST
-      - run: ssh -oStrictHostKeyChecking=no -v $USER@$HOST "chmod +x deploy.sh; ./deploy.sh"
+      - run: ssh test@35.197.150.4 "./deploy.sh"
 
 # Orchestrate our job run sequence
 workflows:
