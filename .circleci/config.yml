@@ -9,11 +9,15 @@ jobs:
       - image: arvindr226/alpine-ssh
     steps:
       - checkout
+<<<<<<< HEAD
       - run: echo $USER@$HOST
+=======
+      - run echo $USER@$HOST 
+>>>>>>> e8f2ec3174f27a57aa2ba174e5090b09dc3b9e22
       - run: ssh -oStrictHostKeyChecking=no -v $USER@$HOST "chmod +x deploy.sh; ./deploy.sh"
 
 # Orchestrate our job run sequence
-workflows:
+ workflows:
   version: 2
   build-project:
     jobs:
