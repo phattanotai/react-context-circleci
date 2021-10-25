@@ -16,3 +16,5 @@ services:
 
 networks:
   default:
+    external:
+      name: swarm_network
