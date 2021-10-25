@@ -4,4 +4,4 @@
 git pull origin master
 
 #run docker with docker
-docker-compose up -d
+docker stack deploy --compose-file docker-compose.yml react-circleci
