@@ -42,3 +42,57 @@ steps:
       - run: aws --version
       - run: aws s3 ls
       - run: yarn run deploy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# push-job:
+  #   docker:
+  #     - image: cimg/node:16.10
+  #   steps:
+  #     - checkout
+
+  #     - node/install-packages:
+     
+  #         pkg-manager: npm
+  #     - run:
+  #         name: Run tests
+  #         command: npm test
+
+  # deploy-job:
+  #   docker:
+  #     - image: cimg/node:16.10
+  #   steps:
+  #     - checkout
+
+  #     - node/install-packages:
+     
+  #         pkg-manager: npm
+  #     - run:
+  #         name: Run tests
+  #         command: npm test
+
+# workflows:
+#   -deploy:
+#     jobs:
+#       - build-job
+      # - push-job
+      # - deploy-job:
+      #     requires:
+      #       - build-job
+      #       - push-job
+      #     filters:
+      #       branches:
+      #         only: master
