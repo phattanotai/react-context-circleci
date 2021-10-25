@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run: echo $USER@$HOST
       - run: echo 52:65:1d:d8:e6:92:6b:31:5f:e7:65:ab:c1:48:ab:1b
-      # - run: ssh test@35.197.150.4 "./deploy.sh"
+      - run: ssh $USER@$HOST "./deploy.sh"
 
 # Orchestrate our job run sequence
 workflows:
