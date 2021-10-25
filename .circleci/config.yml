@@ -1,6 +1,4 @@
-
 version: 2.1
-
 orbs:
   node: circleci/node@4.7
 
@@ -22,7 +20,7 @@ workflows:
           filters:
             branches:
               only:
-                - main
+                - master
 
   # push-job:
   #   docker:
@@ -50,10 +48,10 @@ workflows:
   #         name: Run tests
   #         command: npm test
 
-workflows:
-  -deploy:
-    jobs:
-      - build-job
+# workflows:
+#   -deploy:
+#     jobs:
+#       - build-job
       # - push-job
       # - deploy-job:
       #     requires:
