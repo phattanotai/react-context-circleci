@@ -15,7 +15,7 @@ jobs:
       - run: echo $USER@$HOST
       - run: ssh-keyscan -H $HOST >> ~/.ssh/known_hosts
       - run: ls
-      - run: ssh  $USER@$HOST "./deploy.sh" 
+      - run: ssh  $USER@$HOST "bash deploy.sh" 
 
 # Orchestrate our job run sequence
 workflows:
