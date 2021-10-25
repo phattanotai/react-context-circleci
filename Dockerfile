@@ -2,7 +2,7 @@ FROM node:14.17.0-alpine as build-step
 RUN mkdir -p /app
 WORKDIR /app
 COPY package.json /app
-RUN npm install 
+RUN npm install --prodution
 COPY . /app
 RUN npm run build 
 
