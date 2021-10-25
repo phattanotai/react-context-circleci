@@ -12,7 +12,7 @@ jobs:
             - "35:50:e0:50:50:d8:ec:6f:25:d9:c4:4b:c7:10:85:9c"
       - run: ssh-keyscan -H $HOST >> ~/.ssh/known_hosts
       # - run: ssh  $USER@$HOST cd $PROJECT_NAME; bash deploy.sh 
-      - run: ssh  $USER@$HOST ls; cd ..; ls
+      - run: ssh  $USER@$HOST ls; cd ..; ls; cd ..; ls
 
 # Orchestrate our job run sequence
 workflows:
