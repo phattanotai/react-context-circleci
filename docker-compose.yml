@@ -1,13 +1,12 @@
 version: "3.7"
 services:
-  user-frontend:
+  react-context-circleci:
     build:
       context: ./
       dockerfile: ./Dockerfile
-    container_name: user-frontend
     restart: always
     ports:
-      - "80:80"
+      - "9876:80"
     networks:
       - default
 
