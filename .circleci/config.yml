@@ -14,6 +14,7 @@ jobs:
             - "35:50:e0:50:50:d8:ec:6f:25:d9:c4:4b:c7:10:85:9c"
       - run: echo $USER@$HOST
       - run: ssh-keyscan -H $HOST >> ~/.ssh/known_hosts
+      - run: ls
       - run: ssh  $USER@$HOST "./deploy.sh" 
 
 # Orchestrate our job run sequence
