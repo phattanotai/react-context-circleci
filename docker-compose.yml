@@ -1,7 +1,7 @@
 version: "3.7"
 services:
-  react-context-circleci:
-    image: react-context-circleci
+  react-context-cicd:
+    image: react-context-cicd
     build:
       context: ./
       dockerfile: ./Dockerfile
