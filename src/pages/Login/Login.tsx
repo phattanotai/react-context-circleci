@@ -1,11 +1,11 @@
-import React, { useContext, FC, useEffect } from "react";
+import { useContext, FC } from "react";
 import {
   Form,
   Button,
   Input,
   Space,
   Divider,
-  message,
+  // message,
   notification,
 } from "antd";
 
@@ -55,7 +55,6 @@ const Login: FC<TProps> = ({ title }) => {
   return (
     <div className="login-page">
       <label> {title}</label>
-      Test 1111
       <Form
         form={loginForm}
         name="loginForm"
