@@ -12,12 +12,14 @@ jobs:
       - add_ssh_keys:
           fingerprints: 
             - "35:50:e0:50:50:d8:ec:6f:25:d9:c4:4b:c7:10:85:9c"
-      - run: ssh-keyscan -H $HOST >> ~/.ssh/known_hosts
+      # - run: ssh-keyscan -H $HOST >> ~/.ssh/known_hosts
+      # - run: ssh  $USER@$HOST "cd $PROJECT_NAME; ls; bash deploy.sh"
+  
       - run: ssh  $USER@$HOST "cd $PROJECT_NAME; ls; bash deploy.sh"
 
 # Orchestrate our job run sequence
 workflows:
-  deploy -project:
+  deploy-project:
     jobs:
       - pull-and-build:
           filters:
