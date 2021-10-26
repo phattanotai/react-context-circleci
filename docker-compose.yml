@@ -13,8 +13,7 @@ services:
     deploy:
       mode: replicated
       replicas: 1
-
-networks:
-  default:
-    external:
-      name: swarm_network
+# networks:
+#   default:
+#     external:
+#       name: swarm_network
