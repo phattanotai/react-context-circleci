@@ -54,7 +54,7 @@ const Login: FC<TProps> = ({ title }) => {
   };
   return (
     <div className="login-page">
-      <label> {title} Test</label>
+      <label> {title} Circleci</label>
       <Form
         form={loginForm}
         name="loginForm"
