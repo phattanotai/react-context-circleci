@@ -1,8 +1,8 @@
 Dockerfile
 docker-compose.yml
 *.log
-package-lock.json
 .git/
 node_modules/
 config/development/
 .circleci/
+deploy.sh
