@@ -29,7 +29,7 @@ jobs:
       - run: ssh-keyscan -H $HOST >> ~/.ssh/known_hosts
       # - run: ssh $USER@$HOST "cd $PROJECT_NAME; git tag -d $(git tag); git pull; git checkout tags/$CIRCLE_TAG -b master_$CIRCLE_TAG; ls; bash deploy.sh"
       - run: ssh $USER@$HOST "cd $PROJECT_NAME; git branch"
-      - run: $DEV_SSH "cd $PROJECT_NAME; git checkout master"
+      - run: ssh $USER@$HOST "cd $PROJECT_NAME; git checkout master"
 
 # Orchestrate our job run sequence
 workflows:
