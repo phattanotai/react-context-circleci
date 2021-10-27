@@ -19,7 +19,7 @@ jobs:
           name: Show current branch
           command: echo ${CIRCLE_BRANCH}
 
-      # - run: echo $CIRCLE_TAG
+      - run: echo $CIRCLE_TAG
       - run: echo "deploy"
       # - add_ssh_keys:
       #     fingerprints: 
@@ -44,6 +44,6 @@ workflows:
             tags:
               only: /^v.*/ 
             branches:
-               ignore: /.*/
+              ignore: /.*/
             
   
