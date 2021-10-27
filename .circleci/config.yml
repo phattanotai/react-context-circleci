@@ -27,7 +27,7 @@ jobs:
 
 # Orchestrate our job run sequence
 workflows:
-  version: 2.1
+  version: 2
   deploy-project:
     jobs:
       - pull-and-build:
@@ -37,9 +37,9 @@ workflows:
                 - master
       - deploy:
           filters:
+            tags:
+              only: /^v.*/ 
             branches:
               ignore: /.*/
-            tags:
-              only: /^deploy-.*/  
-              # /^deploy-.*/
+            
   
