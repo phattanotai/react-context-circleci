@@ -45,7 +45,7 @@ workflows:
   version: 2
   deploy-project:
     jobs:
-      - pull-and-build:
+      - build:
           filters:
             branches:
               only:
