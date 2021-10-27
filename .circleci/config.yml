@@ -10,7 +10,14 @@ jobs:
           name: Show current branch
           command: echo ${CIRCLE_BRANCH}
       - run: echo "build"
-      - run: echo $CIRCLE_TAG | "er"
+      - run:
+          name: Push Image
+          command: |
+            if [[ "${CIRCLE_TAG}" =~ /^v.*/ ]]; then
+              echo ${CIRCLE_TAG}
+            else
+              echo 'No tag'
+            fi
   test:
     docker:
       - image: arvindr226/alpine-ssh
