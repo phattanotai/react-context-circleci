@@ -38,8 +38,8 @@ workflows:
               only:
                 - master
       - deploy:
-          requires:
-              - pull-and-build
+          # requires:
+          #     - pull-and-build
           filters:
             tags:
               only: /^v.*/ 
