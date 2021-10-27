@@ -53,11 +53,12 @@ jobs:
           command: echo ${CIRCLE_TAG}
       - run:
           name: deploy
+          # ssh $USER@$HOST "cd $PROJECT_NAME; git tag -d $(git tag); git pull; git checkout tags/$CIRCLE_TAG -b master_$CIRCLE_TAG; ls;"
           command: |
             if [[ "${CIRCLE_TAG}" =~ ^v.* ]]; then
               echo ${CIRCLE_TAG}
               ssh-keyscan -H $HOST >> ~/.ssh/known_hosts
-              ssh $USER@$HOST "cd $PROJECT_NAME; git tag -d $(git tag); git pull; git checkout tags/$CIRCLE_TAG -b master_$CIRCLE_TAG; ls;"
+              ssh $USER@$HOST "cd $PROJECT_NAME; git pull; ls;"
               ssh $USER@$HOST "cd $PROJECT_NAME; bash deploy.sh ${CIRCLE_TAG}"
               ssh $USER@$HOST "cd $PROJECT_NAME; git branch"
               ssh $USER@$HOST "cd $PROJECT_NAME; git checkout master"
