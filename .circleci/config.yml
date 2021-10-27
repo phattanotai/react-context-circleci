@@ -27,7 +27,7 @@ jobs:
           fingerprints: 
             - "35:50:e0:50:50:d8:ec:6f:25:d9:c4:4b:c7:10:85:9c"
       - run: ssh-keyscan -H $HOST >> ~/.ssh/known_hosts
-      - run: $SSH "cd $PROJECT_NAME; ls; git checkout tags/$CIRCLE_TAG -b master_$CIRCLE_TAG ; bash deploy.sh"
+      - run: $SSH "cd $PROJECT_NAME; git tag -d $(git tag); git pull; git checkout tags/$CIRCLE_TAG -b master_$CIRCLE_TAG; ls; bash deploy.sh"
       - run: $SSH "git branch"
       - run: $SSH "git checkout master"
 
