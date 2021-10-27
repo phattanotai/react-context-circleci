@@ -1,5 +1,8 @@
 version: 2.1
 # Define the jobs we want to run for this project
+environment:
+  - SSH: ssh  $USER@$HOST
+
 jobs:
   pull-and-build:
     docker:
@@ -20,11 +23,13 @@ jobs:
           command: echo ${CIRCLE_BRANCH}
       - run: echo $CIRCLE_TAG
       - run: echo "deploy"
-      # - add_ssh_keys:
-      #     fingerprints: 
-      #       - "35:50:e0:50:50:d8:ec:6f:25:d9:c4:4b:c7:10:85:9c"
-      # - run: ssh-keyscan -H $HOST >> ~/.ssh/known_hosts
-      # - run: ssh  $USER@$HOST "cd $PROJECT_NAME; ls; bash deploy.sh"
+      - add_ssh_keys:
+          fingerprints: 
+            - "35:50:e0:50:50:d8:ec:6f:25:d9:c4:4b:c7:10:85:9c"
+      - run: ssh-keyscan -H $HOST >> ~/.ssh/known_hosts
+      - run: $SSH "cd $PROJECT_NAME; ls; git checkout tags/$CIRCLE_TAG -b master_$CIRCLE_TAG ; bash deploy.sh"
+      - run: $SSH "git branch"
+      - run: $SSH "git checkout master"
 
 # Orchestrate our job run sequence
 workflows:
@@ -37,8 +42,6 @@ workflows:
               only:
                 - master
       - deploy:
-          # requires:
-          #     - pull-and-build
           filters:
             tags:
               only: /^v.*/ 
