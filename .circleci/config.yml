@@ -9,7 +9,7 @@ jobs:
       - run:
           name: Show current branch
           command: echo ${CIRCLE_BRANCH}
-      - run: echo $CIRCLE_BRANCH
+      - run: echo $CIRCLE_TAG
       # - add_ssh_keys:
       #     fingerprints: 
       #       - "35:50:e0:50:50:d8:ec:6f:25:d9:c4:4b:c7:10:85:9c"
