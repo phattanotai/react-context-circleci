@@ -18,7 +18,7 @@ jobs:
       - run:
           name: Show current branch
           command: echo ${CIRCLE_BRANCH}
-      - run: echo "build"
+      - run: echo "test"
   deploy:
     docker:
       - image: arvindr226/alpine-ssh
