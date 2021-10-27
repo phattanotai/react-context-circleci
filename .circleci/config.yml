@@ -1,7 +1,7 @@
 version: 2.1
 # Define the jobs we want to run for this project
 environment:
-  - SSH_C: ssh $USER@$HOST
+  - SSH_C: "ssh $USER@$HOST"
 
 jobs:
   pull-and-build:
