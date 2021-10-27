@@ -52,6 +52,14 @@ workflows:
             branches:
               only:
                 - master
+                - dev
+      - test:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
       - deploy:
           filters:
             tags:
