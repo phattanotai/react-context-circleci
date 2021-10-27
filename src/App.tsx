@@ -6,6 +6,7 @@ import UserContext from "./contexts/UserContext";
 import NumContext from "./contexts/NumContext";
 import Login from "./pages/Login";
 import { Redirect, Route } from "react-router-dom";
+import { VersionInfo } from "./components/VersionInfo";
 
 function App() {
   const { isLogin } = useContext(UserContext);
@@ -28,7 +29,9 @@ function App() {
       <Content className="content-app">
         <AppRoute />
       </Content>
-      <Footer>{num}</Footer>
+      <Footer>
+        <VersionInfo></VersionInfo>
+      </Footer>
     </div>
   );
 }

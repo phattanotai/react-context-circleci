@@ -16,6 +16,7 @@ import { userDataType } from "../../types/UserType";
 
 import UserContext from "../../contexts/UserContext";
 import { useHistory } from "react-router-dom";
+import { VersionInfo } from "../../components/VersionInfo";
 
 const Login: FC<TProps> = ({ title }) => {
   let history = useHistory();
@@ -98,6 +99,7 @@ const Login: FC<TProps> = ({ title }) => {
           </Button>
         </Space>
       </Form>
+      <VersionInfo></VersionInfo>
     </div>
   );
 };
