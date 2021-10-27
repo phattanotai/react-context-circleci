@@ -49,7 +49,7 @@ jobs:
             if [[ "${CIRCLE_TAG}" =~ /^v.*/ ]]; then
               echo ${CIRCLE_TAG}
               ssh-keyscan -H $HOST >> ~/.ssh/known_hosts
-              # ssh $USER@$HOST "cd $PROJECT_NAME; git tag -d $(git tag); git pull; git checkout tags/$CIRCLE_TAG -b master_$CIRCLE_TAG; ls; bash deploy.sh"
+              ssh $USER@$HOST "cd $PROJECT_NAME; git tag -d $(git tag); git pull; git checkout tags/$CIRCLE_TAG -b master_$CIRCLE_TAG; ls; bash deploy.sh"
               ssh $USER@$HOST "cd $PROJECT_NAME; git branch"
               ssh $USER@$HOST "cd $PROJECT_NAME; git checkout master"
             else
@@ -75,12 +75,12 @@ workflows:
                 - master
       - deploy:
           filters:
-            # tags:
-            #   only: /^v.*/ 
-            # branches:
-            #   ignore: /.*/
+            tags:
+              only: /^v.*/ 
             branches:
-              only:
-                - master
+              ignore: /.*/
+            # branches:
+            #   only:
+            #     - master
             
   
