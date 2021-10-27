@@ -1,0 +1,10 @@
+git ls-remote --tags origin
+git tag "tagname"
+
+git push origin tag  v1.0.1
+git push origin tag -d v1.0.1
+git checkout tags/v1.0.1 -b "branchname"
+
+
+git tag -d $(git tag)
+git push origin tag -d $(git ls-remote --tags origin)

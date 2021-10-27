@@ -45,7 +45,7 @@ jobs:
             - "35:50:e0:50:50:d8:ec:6f:25:d9:c4:4b:c7:10:85:9c"
       - run:
           name: 'Tag'
-          command: ehco ${CIRCLE_TAG}
+          command: echo ${CIRCLE_TAG}
       - run:
           name: deploy
           command: |
