@@ -16,11 +16,7 @@ jobs:
 
           name: deploy
 
-          command: |
-
-            [ "${CIRCLE_TAG}" != "" ] && TAG=${CIRCLE_TAG} || TAG=latest
-
-            echo "Deploy! ${TAG}"
+          command: CIRCLE_TAG="$(git tag -l --points-at HEAD)" && if [[ $CIRCLE_TAG =~ #regex# ]]; then #commands# fi
 
 
 
